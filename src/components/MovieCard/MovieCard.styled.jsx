@@ -8,7 +8,6 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-image: url(${props => props.backdrop_path});
 `;
-//https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/y2Ca1neKke2mGPMaHzlCNDVZqsK.jpg
 
 export const Poster = styled.img`
   width: 300px;
@@ -16,6 +15,8 @@ export const Poster = styled.img`
 
 export const Description = styled.div`
   padding-left: 30px;
+  color: #032541;
+
 `;
 
 export const Wrapper = styled.div`
@@ -41,7 +42,7 @@ export const Link = styled(NavLink)`
   margin-right: 10px;
 
   &.active {
-    color: white;
+    color: #ea8a49;
     background-color: #032541;
   }
 `;

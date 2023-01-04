@@ -24,11 +24,12 @@ export const MovieItem = styled.li`
 
   & a {
     text-decoration: none;
-    color: #032541;
+    color: #ea8a49;
   }
 
   & p {
     font-weight: 600;
+    color: #032541;
   }
 
   & img {
