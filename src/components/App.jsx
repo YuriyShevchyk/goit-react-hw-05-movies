@@ -1,16 +1,29 @@
+import { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { Container } from 'components/App.styled';
+
+
+const SharedLayout = lazy(() => import('components/Layout/Layout'));
+const Home = lazy(() => import('page/Home/Home'));
+const Movies = lazy(() => import('page/Movies/Movies'));
+const MovieDetails = lazy(() => import('page/MovieDetails/MovieDetails'));
+const Cast = lazy(() => import('components/Cast/CastList/Cast'));
+const Reviews = lazy(() => import('components/Reviews/Reviews'));
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Container>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId" element={<MovieDetails />}>
+            <Route path="reiwers" element={<Reviews />} />
+            <Route path="cast" element={<Cast />} />
+          </Route>
+        </Route>
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </Container>
   );
 };
